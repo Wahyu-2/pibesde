@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Desktop Only</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 30%, #e1bee7 60%, #bbdefb 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+      max-width: 400px;
+      width: 100%;
+      padding: 40px;
+      text-align: center;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .emoji {
+      font-size: 60px;
+      margin-bottom: 20px;
+      animation: bounce 2s ease-in-out infinite;
+      display: inline-block;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .title {
+      font-size: 24px;
+      color: #c2185b;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .text {
+      font-size: 16px;
+      color: #6d4c7a;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #9c27b0;
+      font-style: italic;
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(243, 229, 245, 0.3);
+      border-radius: 10px;
+    }
+
+    .icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="emoji"> laptop</div>
+  <h2 class="title">Desktop Only</h2>
+  <p class="text">
+    Halaman ini hanya dapat diakses melalui laptop atau komputer saja.
+  </p>
+  <div class="icon"> laptop</div>
+  <p class="text">
+    Silakan buka website ini menggunakan perangkat desktop untuk pengalaman terbaik.
+  </p>
+  <div class="note">
+    Website ini dioptimalkan untuk layar yang lebih besar agar semua animasi dan fitur dapat dinikmati dengan sempurna.
+  </div>
+</div>
+
+</body>
+</html>
