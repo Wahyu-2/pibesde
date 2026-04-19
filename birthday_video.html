@@ -16,6 +16,11 @@
       }
     })();
   </script>
+
+  <audio id="nadinMusic" loop preload="auto">
+    <source src="LaguNadin.mp3" type="audio/mpeg">
+  </audio>
+
   <style>
     * {
       margin: 0;
@@ -230,19 +235,20 @@
       </div>
       <div class="overlay-text">
         <div class="overlay-title">Play Birthday Video</div>
-        <div class="overlay-caption">Klik untuk memulai, suaranya pelan saja ya 💗</div>
+        <div class="overlay-caption">Klik untuk memulai, ini dari temen-temen mu semuaaa 💗</div>
       </div>
     </div>
-    
-    <iframe 
-      id="videoFrame"
-      class="video-frame"
-      src="https://www.youtube.com/embed/lcQxe_SEutw?si=zlY5APpsOKHYd8xW"
-      title="Birthday Video"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen>
-    </iframe>
+  
+  
+  <iframe id="videoFrame" class="video-frame" 
+  width="560" height="315" 
+  src="https://www.youtube.com/embed/3Uox3LoDecs?si=LgrjDlibtZkOGBUs" 
+  title="habidiii rarak" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  referrerpolicy="strict-origin-when-cross-origin" 
+  allowfullscreen>
+</iframe>
   </div>
   
   <a href="index.html" class="back-button">Kembali ke Sketchbook</a>
@@ -267,13 +273,22 @@
   function playVideo() {
     const overlay = document.getElementById('videoOverlay');
     const frame = document.getElementById('videoFrame');
-    
+    const music = document.getElementById('nadinMusic');
+
+    if (music) {
+      music.volume = 0.3;
+      var playPromise = music.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(function () {});
+      }
+    }
+
     // Add autoplay parameter to the YouTube URL
     const currentSrc = frame.src;
-    const autoplaySrc = currentSrc.includes('?') 
-      ? currentSrc + '&autoplay=1' 
+    const autoplaySrc = currentSrc.includes('?')
+      ? currentSrc + '&autoplay=1'
       : currentSrc + '?autoplay=1';
-    
+
     frame.src = autoplaySrc;
     overlay.classList.add('hidden');
   }
